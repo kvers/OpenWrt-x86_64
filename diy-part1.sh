@@ -13,7 +13,11 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+#.fix bios boot partition is under 1 MiB
+sed -i 's/256/1024/g' target/linux/x86/image/Makefile
+
+
 # Add a feed source
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git jerryk https://github.com/jerrykuku/openwrt-package' >>feeds.conf.default
+#echo 'src-git jerryk https://github.com/jerrykuku/openwrt-package' >>feeds.conf.default
